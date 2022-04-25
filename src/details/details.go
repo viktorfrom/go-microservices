@@ -12,7 +12,7 @@ func GetHostname() (string, error) {
 }
 
 func GetIP() (net.IP, error) {
-	conn, err := net.Dial("udp", "8.8.8.8:80")
+	conn, err := net.Dial("udp", "8.8.8.8:8080")
 	if err != nil {
 		log.Fatal(err)
 	}
