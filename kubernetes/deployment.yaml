@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellotest123-deployment
+  labels:
+    app: hellotest123
+spec:
+  selector:
+    matchLabels:
+      app: hellotest123
+  replicas: 3 
+  template:
+    metadata:
+      labels:
+        app: hellotest123
+    spec:
+      containers:
+      - name: hellotest123
+        image: hellotest123:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+

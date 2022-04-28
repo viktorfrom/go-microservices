@@ -1,2 +1,21 @@
-1. docker build -t go-microservices:latest .
-2. docker run -dp 8080:8080 --name web go-microservices
+#Setup
+#Minikube
+1. minikube start --driver=docker
+2. eval $(minikube docker-env)
+
+#Run
+#Docker 
+1. docker build -t hellotest123:latest . 
+2. docker run -dp 3000:3000 --name hellotest123 hellotest123:latest
+
+or docker-compose
+1. docker-compose build
+2. docker-compose up -d
+3. docker-compose ps 
+4. docker-compose down
+
+#Kubernetes
+1. kubectl apply -f kubernetes/
+2. kubectl get po,svc
+3. minikube ip
+4. add my-app-service port to minikube ip 

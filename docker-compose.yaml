@@ -3,13 +3,13 @@ services:
   web:
     build: 
       context: .
-      dockerfile: dockerfile
-    image: go-app-ms:latest
+      dockerfile: Dockerfile
+    image: hellotest123:latest
     ports:
-      - "8080:8080"
+      - "3000:3000"
     restart: always
     networks:
       - web
 
-networks: 
-  web: 
+networks:
+  web:
