@@ -1,4 +1,4 @@
-module example.com/m
+module github.com/viktorfrom/go-microservices
 
 go 1.13
 

@@ -5,8 +5,8 @@
 
 #Run
 #Docker 
-1. docker build -t hellotest123:latest . 
-2. docker run -dp 3000:3000 --name hellotest123 hellotest123:latest
+1. docker build -t my-app:latest . 
+2. docker run -dp 3000:3000 --name web my-app:latest
 
 or docker-compose
 1. docker-compose build
