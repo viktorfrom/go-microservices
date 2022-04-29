@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"time"
 
+	details "github.com/viktorfrom/go-microservices/details"
+
 	"github.com/gorilla/mux"
 )
 
@@ -33,11 +35,31 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func detailsHandler(w http.ResponseWriter, r *http.Request) {
+	log.Println("Fetching the details")
+	hostname, err := details.GetHostname()
+	if err != nil {
+		panic(err)
+	}
+
+	IP, err := details.GetIP()
+
+	fmt.Println(hostname, IP)
+
+	response := map[string]string{
+		"hostname": hostname,
+		"ip":       IP.String(),
+	}
+
+	json.NewEncoder(w).Encode(response)
+}
+
 func main() {
 	r := mux.NewRouter()
 
 	//r.HandleFunc("/", handler).Methods("GET")
 	r.HandleFunc("/health", healthHandler)
+	r.HandleFunc("/details", detailsHandler)
 	r.HandleFunc("/", rootHandler)
 
 	http.Handle("/", r)
