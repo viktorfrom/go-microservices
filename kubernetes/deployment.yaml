@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels:
+    app: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  #replicas: 3
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: go-microservices
+        image: go-microservices:latest
+        #imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+
