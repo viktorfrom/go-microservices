@@ -14,7 +14,7 @@ import (
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Serving the homepage")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "App is up and running")
+	fmt.Fprintf(w, "App is up and running hejsan")
 }
 
 func detailsHandler(w http.ResponseWriter, r *http.Request) {
@@ -60,5 +60,5 @@ func main() {
 
 	log.Println("Server has started")
 
-	log.Fatal(http.ListenAndServe(":3000", r))
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

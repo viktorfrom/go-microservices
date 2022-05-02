@@ -5,7 +5,7 @@ WORKDIR /app
 #RUN go mod download 
 COPY . ./
 RUN go build -o main .
-EXPOSE 3000
+EXPOSE 8080
 ENTRYPOINT [ "./main" ]
 
 

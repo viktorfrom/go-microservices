@@ -21,5 +21,5 @@ spec:
         #imagePullPolicy: IfNotPresent
         imagePullPolicy: Never
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
 

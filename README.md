@@ -31,7 +31,7 @@ go run main.go
 Build Docker container where "my-app" is the name of the project.
 ```
 docker build -t my-app:latest . 
-docker run -dp 3000:3000 --name web my-app:latest
+docker run -dp 8080:8080 --name web my-app:latest
 ```
 
 Or use Docker-Compose instead.
