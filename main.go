@@ -14,7 +14,7 @@ import (
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Serving the homepage")
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, "App is up and running hejsan")
+	fmt.Fprintf(w, "App is up and running")
 }
 
 func detailsHandler(w http.ResponseWriter, r *http.Request) {
